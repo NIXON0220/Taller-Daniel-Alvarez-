@@ -8,7 +8,7 @@ function calcularDias(){
         let dias = (fechaFin - fechaInicio) / (1000 * 60 * 60 * 24);
         alert("La cantidad de dias es: " + dias);
     }
-    
+
     let resta = fechaFin.getTime() - fechaInicio.getTime();
     alert(resta)    
     alert(fechaInicio);
