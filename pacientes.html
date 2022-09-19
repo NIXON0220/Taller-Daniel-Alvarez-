@@ -69,58 +69,58 @@
 </header>
 <div style="text-align: center;">
   <h1>Bienvenidos al sistema de agendamiento de citas medicas</h1>
+  
+  <div class="nombre">
+    <h6>Nombre del Paciente</h6>
+    <input type="text" class="form-control" placeholder="Nombre" aria-label="Recipient's username with two button addons" id="nombre">
+</div>
+<div class="apellido">
+    <h6>Apellido del Paciente</h6>
+    <input type="text" class="form-control" placeholder="Apellido" aria-label="Recipient's username with two button addons" id="apellido">
 
-  <form action="">
-      <div class="form-group">
-          <label for="exampleFormControlSelect1" style="font-size:15px"> Seleccione al medico</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-              <option></option>
-              <option value="1">Dr. Juan Perez</option>
-              <option value="2">Dr. Pedro Lopez</option>
-              <option value="3">Dr. Carlos Martinez</option>
-              <option value="4">Dr. Jose Gonzales</option>
-              <option value="5">Dr. Luisa Fernanda</option>
-          </select>
-      </div><br>
+    <div class="cedula">
+        <h6>Cedula del Paciente</h6>
+        <input type="text" class="form-control" placeholder="Cedula" aria-label="Recipient's username with two button addons" id="cedula">
+  </div>
 
-      <div class="form-group">
-          <label for="exampleFormControlSelect2"> seleccione la hora</label>
-          <select class="form-control" id="exampleFormControlSelect2">
-              <option></option>
-              <option value="7">   7:00 am</option>
-              <option value="7:30">7:30 am</option>
-              <option value="8">   8:00 am</option>
-              <option value="8:30">8:30 am</option>
-              <option value="9">   9:00 am</option>
-              <option value="9:30">9:30 am</option>
-              <option value="10">  10:00 am</option>
-              <option value="10:30">10:30 am</option>
-              <option value="11">  11:00 am</option>
-              <option value="11:30">11:30 am</option>
-              <option value="12">  12:00 am</option>
-              <option value="12:30">12:30 am</option>
-              <option value="13">  13:00 am</option>
-              <option value="13:30">13:30 am</option>
-              <option value="14">  14:00 am</option>
-              <option value="14:30">14:30 am</option>
-              <option value="15">  15:00 am</option>
-              <option value="15:30">15:30 am</option>
-              <option value="16">  16:00 am</option>
-              <option value="16:30">16:30 am</option>
-              <option value="17">  17:00 am</option>
-              <option value="17:30">17:30 am</option>
-              <option value="18">  18:00 am</option>
-              <option value="18:30">16:30 am</option>
-          </select>
-      </div><br>
+  <div class="consulta">
+    <h6>Motivo de Consulta</h6>
+    <input type="text" class="form-control" placeholder="Consulta" aria-label="Recipient's username with two button addons" id="motivo">
+  </div>
 
-      <label for="appt-date">Escoje el dia que deseas la cita <b>(No se atiende sabado ni domingo)</b></label><br>
-      <input type="date" name="" id="exampleFormControlSelect3"><br><br>
+<label>
+  <input type="time">
+  <input type="date" id="fechaInicio">
+  <input type="date" id="fechaFin">
+  <input type="submit" id="calcular" onclick="calcularDias();">
+</label>
 
-      <button onclick="" type="submit" style="border-radius:5px ;border:0;padding:5px 15px ;font-size:15px; font-weight:bold; 
-      background:rgb(2, 247, 145)">Enviar Solicitud</button>
+<br>
+  <div class="atencion">
+    <h5>por cada dia de atencion especializada se cobrara un valor de $75.000</h5>
+  </div>
+
+  <div class="sisben">
+    <h6>¿Tiene sisben?</h6>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="si">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Si
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="no" checked>
+      <label class="form-check-label" for="flexRadioDefault2">
+        No
+      </label>
+    </div>
+    <br>
+
+
+    <button type="button" class="btn btn-primary" onclick="generarpdfdatos()">Generar PDF</button>
   </form>
 </div>
+
 
 
 
@@ -129,7 +129,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./accesibilidad.js"></script>
-    <script src="jsPDF-1.3.2\dist\jspdf.min.js"></script> 
+    <script src="jsPDF-1.3.2\dist\jspdf.min.js"></script>
+    <script src="./datos.js"></script>" 
+    <script src="./calcularDias.js"></script>
   
 <footer>
     <div class="card">
