@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<header onload="mostrarHora();">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="medicos.html">Gestión de médicos<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pacientes.html">Gestión de pacientes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pacientes.html">Gestión de citas médicas</a>
+            </li>
+            <li class="nav-item">
+                <label class="btn btn-outline-success my-0 my-sm-0">Hora del sistema: <label id="mostrarReloj"></label>
+            </li>
+          </ul>
+
+        </div>
+        <button id="activar" onclick="mostrarOpciones();" style="border-radius:5px; margin-right:5px; font-size:14px;">MOSTRAR</button>
+        <div id="opciones"hidden>
+        <button id="aumentar"  onclick="aumentarTamanio();" class="btn btn-primary" style="background-color:#212529; color:#fff; border:0;">Aumentar tamaño</button>
+        <button id="disminuir" onclick="disminuirTamanio();" class="btn btn-primary" style="background-color:#212529; color:#fff; border:0;">Disminuir tamaño</button>
+        <label></label>
+        <select id="select_color" onchange="cambiarColor();" class="btn btn-primary" style="background-color:#212529; color:#fff; border:0;">
+            <option value=""></option>
+            <option value="red">Rojo</option>
+            <option value="blue">Azul</option>
+            <option value="green">Verde</option>
+            <option value="yellow">Amarillo</option>
+        </select>
+        <label></label>
+        <select id="cambiaFuente" onchange="cambiarLetra();" class="btn btn-primary" style="background-color:#212529; color:#fff; border:0;">
+            <option value=""></option>
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Tahoma">Tahoma</option>
+        </select>
+        
+        <select id="cambiar_color_letra" onchange="cambiarColorLetra();" class="btn btn-primary" style="background-color:#212529; color:#fff; border:0;">
+            <option value=""></option>
+            <option value="red">Rojo</option>
+            <option value="blue">Azul</option>
+            <option value="green">Verde</option>
+            <option value="yellow">Amarillo</option>
+        </select>
+        <label></label>
+        <button id="ocultar" onclick="ocultar();" style="border-radius:5px; margin-right:5px; font-size:14px;">OCULTAR</button>  
+        <button id="restablecer" onclick="restablecer();" style="border-radius:5px; margin-right:5px; font-size:14px;">RESTABLECER</button>                         
+        </div>
+        </div>
+        </div>
+        </div>
+      </nav>
+</header>
+<div style="text-align: center;">
+  <h1>Bienvenidos al sistema de agendamiento de citas medicas</h1>
+
+  <form action="">
+      <div class="form-group">
+          <label for="exampleFormControlSelect1" style="font-size:15px"> Seleccione al medico</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+              <option></option>
+              <option value="1">Dr. Juan Perez</option>
+              <option value="2">Dr. Pedro Lopez</option>
+              <option value="3">Dr. Carlos Martinez</option>
+              <option value="4">Dr. Jose Gonzales</option>
+              <option value="5">Dr. Luisa Fernanda</option>
+          </select>
+      </div><br>
+
+      <div class="form-group">
+          <label for="exampleFormControlSelect2"> seleccione la hora</label>
+          <select class="form-control" id="exampleFormControlSelect2">
+              <option></option>
+              <option value="7">   7:00 am</option>
+              <option value="7:30">7:30 am</option>
+              <option value="8">   8:00 am</option>
+              <option value="8:30">8:30 am</option>
+              <option value="9">   9:00 am</option>
+              <option value="9:30">9:30 am</option>
+              <option value="10">  10:00 am</option>
+              <option value="10:30">10:30 am</option>
+              <option value="11">  11:00 am</option>
+              <option value="11:30">11:30 am</option>
+              <option value="12">  12:00 am</option>
+              <option value="12:30">12:30 am</option>
+              <option value="13">  13:00 am</option>
+              <option value="13:30">13:30 am</option>
+              <option value="14">  14:00 am</option>
+              <option value="14:30">14:30 am</option>
+              <option value="15">  15:00 am</option>
+              <option value="15:30">15:30 am</option>
+              <option value="16">  16:00 am</option>
+              <option value="16:30">16:30 am</option>
+              <option value="17">  17:00 am</option>
+              <option value="17:30">17:30 am</option>
+              <option value="18">  18:00 am</option>
+              <option value="18:30">16:30 am</option>
+          </select>
+      </div><br>
+
+      <label for="appt-date">Escoje el dia que deseas la cita <b>(No se atiende sabado ni domingo)</b></label><br>
+      <input type="date" name="" id="exampleFormControlSelect3"><br><br>
+
+      <button onclick="" type="submit" style="border-radius:5px ;border:0;padding:5px 15px ;font-size:15px; font-weight:bold; 
+      background:rgb(2, 247, 145)">Enviar Solicitud</button>
+  </form>
+</div>
+
+
+
+    <script src="./reloj.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./accesibilidad.js"></script>
+    <script src="jsPDF-1.3.2\dist\jspdf.min.js"></script> 
+  
+<footer>
+    <div class="card">
+        <div class="card-body text-center">
+          <blockquote class="blockquote mb-0">
+      
+          </blockquote>
+        </div>
+      </div>
+</footer>
+</body>
+</html>
