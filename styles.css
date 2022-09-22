@@ -1,0 +1,75 @@
+.formulario {
+    border:5px solid rgb(82, 215, 255);
+    border-radius:22px;
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-top: 5em;
+}
+
+h1{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    padding-top: 1em;
+    text-align: center;
+}
+.nombre{
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 8em;
+    margin-right: 8em;
+    margin-top: 2em;
+    padding-top: 1em;
+}
+
+.apellido{
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 8em;
+    margin-right: 8em;
+    margin-top: 1em;
+}
+
+.cedula{
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 8em;
+    margin-right: 8em;
+    margin-top: 1em;
+}
+
+.consulta{
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 8em;
+    margin-right: 8em;
+    margin-top: 1em;
+}
+
+.fechas{
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 8em;
+    margin-right: 8em;
+    margin-top: 1em;
+}
+
+.boton{
+    padding: 10px;
+}
+
+.tipodesisben{
+   margin-left: 28em;
+   padding-top: 1em;
+   margin-top: 1em;
+}

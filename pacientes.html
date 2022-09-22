@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
 </head>
@@ -37,10 +38,10 @@
         <label></label>
         <select id="select_color" onchange="cambiarColor();" class="btn btn-primary" style="background-color:#212529; color:#fff; border:0;">
             <option value=""></option>
-            <option value="red">Rojo</option>
-            <option value="blue">Azul</option>
-            <option value="green">Verde</option>
-            <option value="yellow">Amarillo</option>
+            <option value="#5C5C60">Gris</option>
+            <option value="#97E5DB">Azul</option>
+            <option value="#78E495">Verde</option>
+            <option value="#FDBB63">Amarillo</option>
         </select>
         <label></label>
         <select id="cambiaFuente" onchange="cambiarLetra();" class="btn btn-primary" style="background-color:#212529; color:#fff; border:0;">
@@ -53,10 +54,10 @@
         
         <select id="cambiar_color_letra" onchange="cambiarColorLetra();" class="btn btn-primary" style="background-color:#212529; color:#fff; border:0;">
             <option value=""></option>
-            <option value="red">Rojo</option>
-            <option value="blue">Azul</option>
-            <option value="green">Verde</option>
-            <option value="yellow">Amarillo</option>
+            <option value="#697a98">Gris</option>
+            <option value="#19335A">Azul</option>
+            <option value="#78E495">Verde</option>
+            <option value="#FDBB63">Amarillo</option>
         </select>
         <label></label>
         <button id="ocultar" onclick="ocultar();" style="border-radius:5px; margin-right:5px; font-size:14px;">OCULTAR</button>  
@@ -67,9 +68,10 @@
         </div>
       </nav>
 </header>
-<div style="text-align: center;">
-  <h1>Bienvenidos al sistema de agendamiento de citas medicas</h1>
-  
+
+<h1>Bienvenidos al sistema de agendamiento de citas medicas</h1>
+
+<div class=formulario style="text-align: center;">
   <div class="nombre">
     <h6>Nombre del Paciente</h6>
     <input type="text" class="form-control" placeholder="Nombre" aria-label="Recipient's username with two button addons" id="nombre">
@@ -77,6 +79,7 @@
 <div class="apellido">
     <h6>Apellido del Paciente</h6>
     <input type="text" class="form-control" placeholder="Apellido" aria-label="Recipient's username with two button addons" id="apellido">
+</div>
 
     <div class="cedula">
         <h6>Cedula del Paciente</h6>
@@ -88,31 +91,30 @@
     <input type="text" class="form-control" placeholder="Consulta" aria-label="Recipient's username with two button addons" id="motivo">
   </div>
 
-<label>
+<label class="fechas">
   <input type="time" id="hora">
-  <input type="date" id="fechaInicio">
-  <input type="date" id="fechaFin">
-  <input type="submit" id="calcular" onclick="calcularDias();">
+  <input type="date" id="FechaInicio">
+  <input type="date" id="FechaSalida">
+  <input type="submit" id="calcular" onclick="validarDatos();">
 </label>
 
-<br>
-  <div class="atencion">
-    <h5>por cada dia de atencion especializada se cobrara un valor de $75.000</h5>
-  </div>
-  <div class="sisben">
-    <h5>¿TIENE SISBEN?</h5>
-     <input type="radio" id="sisben" name="sisben" value="si">
-      <label for="si">Si</label>
-      <input type="radio" id="sisben" name="sisben" value="no">
-      <label for="no">No</label>
-  </div>
-    <br>
-    </div>
 
-    <br>
-    <button type="button" class="btn btn-primary" onclick="generarpdfdatos()">Generar PDF</button>
-  </form>
+<br>
+<h3><b>¿ Cual es su Sisben?</b></h3><br>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="SisbenA" value="option1">
+    <label class="form-check-label" for="inlineRadio1">A</label>
 </div>
+
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="NivelB" value="option2">
+    <label class="form-check-label" for="inlineRadio2">B</label>
+</div><br><br>
+
+
+<button onclick="validarDatos()"  class="btn btn-success" type="submit">Generar PDF</button><br><br>
+
+
 
     <script src="./reloj.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -120,11 +122,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./accesibilidad.js"></script>
     <script src="jsPDF-1.3.2\dist\jspdf.min.js"></script>
-    <script src="./datos.js"></script>" 
-    <script src="./calcularDias.js"></script>
-    <script src="./valorpago.js"></script>
+    <script src="./validarDatos.js"></script>
+    
      
-<footer>
+<!-- <footer>
     <div class="card">
         <div class="card-body text-center">
           <blockquote class="blockquote mb-0">
@@ -132,6 +133,6 @@
           </blockquote>
         </div>
       </div>
-</footer>
+</footer> -->
 </body>
 </html>

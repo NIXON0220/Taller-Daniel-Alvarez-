@@ -36,3 +36,11 @@ function restablecer(){
     document.body.style.fontFamily = "Arial";
     document.body.style.fontSize = "15px";
 }
+
+function mostrar(){
+    document.getElementById("si") .hidden = false; 
+}
+
+function locked(){
+    document.getElementById("si") .hidden = true;
+}
