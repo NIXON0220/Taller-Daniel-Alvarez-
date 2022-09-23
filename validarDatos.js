@@ -71,16 +71,16 @@ function GenerarPDF(valorTotal, fechainicio, fechaFin, radioChecked) {
     doc.text(20, 15, 'FACTURA DEL PACIENTE');
     doc.setFontType('');
     doc.setFontSize(10);
-    doc.text(20,25, "hora de entrada:" + hora)
-    doc.text(20, 30, 'Fecha de la factura: ' + new Date());
+    doc.text(20,30, "hora de entrada:" + hora)
+    doc.text(20, 35, 'Fecha de la factura: ' + new Date());
     doc.setFontSize(15);
-    doc.text(20, 40, 'Nombre: ' + name);
-    doc.text(20, 50, 'Cedula: ' + id);
-    doc.text(20, 60, 'Motivo: ' + reason);
-    doc.text(20, 70, 'Fecha de inicio: ' + fechainicio);
-    doc.text(20, 80, 'Fecha de fin: ' + fechaFin);
-    doc.text(20, 90, '¿Aplica descuento?: ' + radioChecked);
+    doc.text(20, 50, 'Nombre: ' + name);
+    doc.text(20, 60, 'Cedula: ' + id);
+    doc.text(20, 70, 'Motivo: ' + reason);
+    doc.text(20, 80, 'Fecha de inicio: ' + fechainicio);
+    doc.text(20, 90, 'Fecha de fin: ' + fechaFin);
+    doc.text(20, 100, '¿Aplica descuento?: ' + radioChecked);
     doc.setFontSize(20);
-    doc.text(20, 120, 'Valor de la factura: ' + valorTotal);
+    doc.text(20, 130, 'Valor Total: ' + valorTotal);
     doc.save('factura_paciente-pdf');
 }
